@@ -1,0 +1,117 @@
+# Tulunad Store - E-commerce Platform
+
+Welcome to the Tulunad Store, a full-featured e-commerce web application built with the MERN stack (MySQL, Express, React, Node.js). This platform is inspired by the vibrant culture of the Tulunad region in Karnataka, India, offering a seamless shopping experience for authentic merchandise.
+
+## About The Project
+
+This project was built to serve as a comprehensive, real-world example of a modern e-commerce platform. It demonstrates a complete, end-to-end user experience, from browsing products and adding them to a cart, to a secure multi-step checkout process.
+
+The application features a secure RESTful API on the backend and a dynamic, responsive user interface on the frontend. A key feature is the role-based access control, which provides a separate, secure dashboard for administrators to manage the product catalog, showcasing a practical application of authentication and authorization.
+
+## Key Features
+
+- **Complete E-commerce Flow**: Browse products, add items to the cart, and complete the checkout process.
+- **User Authentication**: Secure user registration and login system using JSON Web Tokens (JWT).
+- **Product Management**: A dynamic product catalog with search and filtering capabilities.
+- **Shopping Cart**: Fully functional cart with the ability to add, update, and remove items.
+- **Order Management**: Users can place orders and view their order history in their personal account dashboard.
+- **Admin Dashboard**: A secure, role-protected dashboard for administrators to perform CRUD (Create, Read, Update, Delete) operations on products.
+- **Image Hosting**: Product images are hosted and managed via the Cloudinary cloud platform.
+- **Responsive Design**: The user interface is designed to be fully responsive and works beautifully on all devices.
+
+## Tech Stack
+
+**Backend:**
+- **Node.js**: JavaScript runtime environment.
+- **Express.js**: Web application framework for Node.js.
+- **MySQL2**: Database driver for connecting to the MySQL database.
+- **JWT (jsonwebtoken)**: For secure user authentication.
+- **Bcrypt.js**: For hashing user passwords.
+- **Cloudinary**: For cloud-based image storage and management.
+- **Multer**: Middleware for handling file uploads.
+- **Dotenv**: For managing environment variables.
+
+**Frontend:**
+- **React.js**: A JavaScript library for building user interfaces.
+- **React Router**: For client-side routing and navigation.
+- **Styled Components**: For component-level styling.
+- **Framer Motion**: For animations and page transitions.
+- **Axios**: For making API requests to the backend.
+- **React Hot Toast**: For user-friendly notifications.
+
+## Project Structure
+
+The project is organized into two main directories:
+
+- `/backend`: Contains the Node.js/Express server, API routes, controllers, and database logic.
+- `/frontend`: Contains the React application, components, pages, and all client-side logic.
+
+## Setup and Installation
+
+To get this project up and running on your local machine, please follow these steps.
+
+### Prerequisites
+
+- **Node.js** (v16 or later)
+- **MySQL** (or a compatible database like MariaDB)
+- **Git**
+
+### 1. Backend Setup
+
+1.  **Navigate to the backend directory:**
+    ```bash
+    cd backend
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Set up the database:**
+    - Connect to your MySQL server.
+    - Create a new database. The `schema.sql` file uses `tulunad_store_db` by default.
+    - Run the `schema.sql` script provided in the `backend` directory to create all the necessary tables and pre-populate product data.
+4.  **Create a `.env` file** in the `backend` directory and populate it with your credentials, following the example below.
+5.  **Start the backend server:**
+    ```bash
+    npm start
+    ```
+    The server should now be running on `http://localhost:5000`.
+
+### 2. Frontend Setup
+
+1.  **Navigate to the frontend directory:**
+    ```bash
+    cd frontend
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the frontend development server:**
+    ```bash
+    npm start
+    ```
+    The React application should now be running and will open automatically in your browser at `http://localhost:3000`.
+
+## Environment Variables (`.env`)
+
+Your backend requires a `.env` file for configuration. Create this file in the `/backend` directory:
+
+```env
+# Server Configuration
+PORT=5000
+
+# Database Configuration (MySQL)
+DB_HOST=localhost
+DB_USER=your_mysql_user
+DB_PASSWORD=your_mysql_password
+DB_NAME=tulunad_store_db
+
+# JSON Web Token (JWT) Configuration
+JWT_SECRET=your_super_long_and_secret_jwt_string
+JWT_EXPIRES_IN=7d
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
